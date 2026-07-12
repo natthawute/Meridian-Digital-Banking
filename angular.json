@@ -23,7 +23,7 @@
             "outputPath": "dist/accounts-dashboard",
             "index": "projects/accounts-dashboard/src/index.html",
             "main": "projects/accounts-dashboard/src/main.ts",
-            "polyfills": "projects/accounts-dashboard/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/accounts-dashboard/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,7 +31,7 @@
               "projects/accounts-dashboard/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/legacy-prebuilt-themes/legacy-indigo-pink.css",
               "projects/accounts-dashboard/src/styles.scss"
             ],
             "scripts": []
@@ -91,7 +91,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/accounts-dashboard/src/test.ts",
-            "polyfills": "projects/accounts-dashboard/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/accounts-dashboard/tsconfig.spec.json",
             "karmaConfig": "projects/accounts-dashboard/karma.conf.js",
             "inlineStyleLanguage": "scss",
@@ -100,7 +100,7 @@
               "projects/accounts-dashboard/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/legacy-prebuilt-themes/legacy-indigo-pink.css",
               "projects/accounts-dashboard/src/styles.scss"
             ],
             "scripts": []
@@ -134,7 +134,7 @@
             "outputPath": "dist/transfers",
             "index": "projects/transfers/src/index.html",
             "main": "projects/transfers/src/main.ts",
-            "polyfills": "projects/transfers/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/transfers/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -142,7 +142,7 @@
               "projects/transfers/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/legacy-prebuilt-themes/legacy-indigo-pink.css",
               "projects/transfers/src/styles.scss"
             ],
             "scripts": []
@@ -202,7 +202,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/transfers/src/test.ts",
-            "polyfills": "projects/transfers/src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/transfers/tsconfig.spec.json",
             "karmaConfig": "projects/transfers/karma.conf.js",
             "inlineStyleLanguage": "scss",
@@ -211,7 +211,7 @@
               "projects/transfers/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material/legacy-prebuilt-themes/legacy-indigo-pink.css",
               "projects/transfers/src/styles.scss"
             ],
             "scripts": []

@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "//": "VENDOR CONSTRAINT: per the provider's compatibility matrix this SDK requires Angular <=16. Not enforced by tooling; documented here as an upgrade risk for the Angular 18 migration.",
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
