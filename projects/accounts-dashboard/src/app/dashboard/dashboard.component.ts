@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from 'analytics-sdk';
 import { MrdModalService } from 'design-system';
-import { MarketDataService } from 'market-data-client';
 import { DisplayBalance, toDisplayBalance } from '../balance-parser';
+import { MarketDataAdapter } from '../market-data.adapter';
 
 interface AccountRow {
   id: string;
@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   ];
 
   constructor(
-    private marketData: MarketDataService,
+    private marketData: MarketDataAdapter,
     private analytics: AnalyticsService,
     private modal: MrdModalService
   ) {}
