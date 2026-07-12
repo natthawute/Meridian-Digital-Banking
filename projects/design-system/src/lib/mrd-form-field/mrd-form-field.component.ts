@@ -5,20 +5,18 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import { MatLegacyFormField as MatFormField } from '@angular/material/legacy-form-field';
-import { MatFormFieldControl } from '@angular/material/form-field';
+import {
+  MatFormField,
+  MatFormFieldControl,
+} from '@angular/material/form-field';
 
 /**
  * Meridian branded form field.
- *
- * NOTE: uses the pre-MDC `appearance="legacy"` Angular Material form-field
- * API, which is removed in Angular Material v15. This is a known upgrade
- * risk for the Angular 14 -> 18 migration.
  */
 @Component({
   selector: 'mrd-form-field',
   template: `
-    <mat-form-field appearance="legacy" class="mrd-form-field">
+    <mat-form-field appearance="fill" class="mrd-form-field">
       <mat-label>{{ label }}</mat-label>
       <ng-content></ng-content>
       <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
