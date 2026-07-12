@@ -1,4 +1,14 @@
-import { Component, Input } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChild,
+  Input,
+  ViewChild,
+} from '@angular/core';
+import {
+  MatFormField,
+  MatFormFieldControl,
+} from '@angular/material/form-field';
 
 /**
  * Meridian branded form field.
@@ -17,7 +27,21 @@ import { Component, Input } from '@angular/core';
     </mat-form-field>
   `,
 })
-export class MrdFormFieldComponent {
+export class MrdFormFieldComponent implements AfterContentInit {
   @Input() label = '';
   @Input() hint = '';
+
+  @ViewChild(MatFormField, { static: true })
+  private formField!: MatFormField;
+
+  @ContentChild(MatFormFieldControl, { static: true })
+  private control!: MatFormFieldControl<unknown>;
+
+  // Content projected through <ng-content> is not picked up by
+  // mat-form-field's own content query, so the control is wired up manually.
+  ngAfterContentInit(): void {
+    if (this.control) {
+      this.formField._control = this.control;
+    }
+  }
 }
