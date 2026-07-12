@@ -63,6 +63,8 @@ export class TransferFormComponent {
     this.modal.open({
       title: 'Transfer submitted',
       message: `A transfer of $${this.amount} from ${this.fromAccount} to ${this.toAccount} has been submitted.`,
+    }).afterClosed().subscribe(() => {
+      this.submitting = false;
     });
   }
 }
