@@ -26,7 +26,7 @@ import { MrdModalService } from 'design-system';
         <input matNativeControl type="number" name="amount" [(ngModel)]="amount" />
       </mrd-form-field>
 
-      <button mrd-button variant="primary" type="submit">Submit transfer</button>
+      <button mrd-button variant="primary" type="submit" [disabled]="submitting">Submit transfer</button>
     </form>
 
     <div class="mfa-demo">
@@ -40,6 +40,7 @@ export class TransferFormComponent {
   fromAccount = 'checking';
   toAccount = 'savings';
   amount = 0;
+  submitting = false;
 
   constructor(
     private analytics: AnalyticsService,
@@ -47,6 +48,12 @@ export class TransferFormComponent {
   ) {}
 
   onSubmit(): void {
+    if (this.submitting) {
+      return;
+    }
+
+    this.submitting = true;
+
     this.analytics.track('transfer_submit', {
       from: this.fromAccount,
       to: this.toAccount,

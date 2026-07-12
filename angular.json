@@ -302,6 +302,7 @@
               "projects/transfers/src/assets"
             ],
             "styles": [
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/transfers/src/styles.scss"
             ],
             "scripts": []
@@ -370,6 +371,7 @@
               "projects/transfers/src/assets"
             ],
             "styles": [
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/transfers/src/styles.scss"
             ],
             "scripts": []

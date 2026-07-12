@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
     <div class="mfa-step">
       <h2>Verify your identity</h2>
       <p>Enter the code sent to your device.</p>
-      <input type="text" placeholder="000000" readonly />
+      <input type="text" placeholder="000000" maxlength="6" inputmode="numeric" />
     </div>
   `,
   styleUrls: ['./mfa-step.component.scss'],
