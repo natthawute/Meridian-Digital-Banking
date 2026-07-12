@@ -7,6 +7,7 @@ export type MrdButtonVariant = 'primary' | 'accent' | 'danger';
   template: `
     <button
       mat-raised-button
+      type="button"
       [color]="materialColor"
       [disabled]="disabled"
       [class]="'mrd-button mrd-button--' + variant"
