@@ -1,0 +1,12 @@
+{
+  "name": "market-data-client",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "//": "Vendor compatibility matrix: third-party market data SDK requires Angular <=16 per vendor contract. Upgrading the workspace to Angular 18 must either remove or replace this library."
+}
