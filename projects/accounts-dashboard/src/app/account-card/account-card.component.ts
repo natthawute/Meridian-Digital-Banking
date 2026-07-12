@@ -10,7 +10,7 @@ import { DisplayBalance } from '../balance-parser';
       <p class="account-balance">
         Balance: <strong>{{ balance.amount }} {{ balance.currency }}</strong>
       </p>
-      <button mrd-button mrdCardActions variant="primary" (click)="view.emit()">View details</button>
+      <mrd-button mrdCardActions variant="primary" (click)="view.emit()">View details</mrd-button>
     </mrd-card>
   `,
   styleUrls: ['./account-card.component.scss'],

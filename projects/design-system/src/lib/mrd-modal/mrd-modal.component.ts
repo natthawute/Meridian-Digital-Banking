@@ -12,7 +12,7 @@ export interface MrdModalData {
     <h2 mat-dialog-title *ngIf="data.title">{{ data.title }}</h2>
     <mat-dialog-content>{{ data.message }}</mat-dialog-content>
     <mat-dialog-actions>
-      <button mat-raised-button color="primary" [mat-dialog-close]="true">OK</button>
+      <button mat-raised-button color="primary" type="button" (click)="dialogRef.close()">OK</button>
     </mat-dialog-actions>
   `,
   styleUrls: ['./mrd-modal.component.scss'],

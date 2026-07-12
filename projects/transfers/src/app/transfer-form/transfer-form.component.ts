@@ -26,7 +26,7 @@ import { MrdModalService } from 'design-system';
         <input matNativeControl type="number" name="amount" [(ngModel)]="amount" />
       </mrd-form-field>
 
-      <button mrd-button variant="primary" type="submit" [disabled]="submitting">Submit transfer</button>
+      <mrd-button variant="primary" type="submit" [disabled]="submitting">Submit transfer</mrd-button>
     </form>
 
     <div class="mfa-demo">
