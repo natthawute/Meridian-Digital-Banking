@@ -3,7 +3,8 @@
 <app-account-card
   *ngFor="let row of accounts"
   [account]="row.account"
-  [balance]="row.balance">
+  [balance]="row.balance"
+  (view)="viewDetails(row.account)">
 </app-account-card>
 
 <p *ngIf="accounts.length === 0" class="empty-state">Loading accounts...</p>

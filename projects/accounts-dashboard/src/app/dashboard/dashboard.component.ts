@@ -3,6 +3,7 @@ import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AnalyticsService } from 'analytics-sdk';
 import { MarketDataService } from 'market-data-client';
+import { MrdModalService } from 'design-system';
 import { Account } from '../models/account.model';
 import { DisplayBalance, parseBalance } from '../balance-parser';
 
@@ -27,11 +28,19 @@ export class DashboardComponent implements OnInit {
   constructor(
     private analytics: AnalyticsService,
     private marketData: MarketDataService,
+    private modal: MrdModalService,
   ) {}
 
   ngOnInit(): void {
     this.analytics.track('dashboard_view', { page: 'accounts' });
     this.loadBalances();
+  }
+
+  viewDetails(account: Account): void {
+    this.modal.open({
+      title: account.name,
+      message: `Account ${account.accountId} — ${account.type} account.`,
+    });
   }
 
   loadBalances(): void {
