@@ -1,0 +1,392 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "accounts-dashboard": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/accounts-dashboard",
+      "sourceRoot": "projects/accounts-dashboard/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/accounts-dashboard",
+            "index": "projects/accounts-dashboard/src/index.html",
+            "main": "projects/accounts-dashboard/src/main.ts",
+            "polyfills": "projects/accounts-dashboard/src/polyfills.ts",
+            "tsConfig": "projects/accounts-dashboard/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/accounts-dashboard/src/favicon.ico",
+              "projects/accounts-dashboard/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/accounts-dashboard/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/accounts-dashboard/src/environments/environment.ts",
+                  "with": "projects/accounts-dashboard/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "accounts-dashboard:build:production"
+            },
+            "development": {
+              "browserTarget": "accounts-dashboard:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "accounts-dashboard:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/accounts-dashboard/src/test.ts",
+            "polyfills": "projects/accounts-dashboard/src/polyfills.ts",
+            "tsConfig": "projects/accounts-dashboard/tsconfig.spec.json",
+            "karmaConfig": "projects/accounts-dashboard/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/accounts-dashboard/src/favicon.ico",
+              "projects/accounts-dashboard/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/accounts-dashboard/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/accounts-dashboard/**/*.ts",
+              "projects/accounts-dashboard/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "transfers": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/transfers",
+      "sourceRoot": "projects/transfers/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/transfers",
+            "index": "projects/transfers/src/index.html",
+            "main": "projects/transfers/src/main.ts",
+            "polyfills": "projects/transfers/src/polyfills.ts",
+            "tsConfig": "projects/transfers/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/transfers/src/favicon.ico",
+              "projects/transfers/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/transfers/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/transfers/src/environments/environment.ts",
+                  "with": "projects/transfers/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "transfers:build:production"
+            },
+            "development": {
+              "browserTarget": "transfers:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "transfers:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/transfers/src/test.ts",
+            "polyfills": "projects/transfers/src/polyfills.ts",
+            "tsConfig": "projects/transfers/tsconfig.spec.json",
+            "karmaConfig": "projects/transfers/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/transfers/src/favicon.ico",
+              "projects/transfers/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/transfers/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/transfers/**/*.ts",
+              "projects/transfers/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "design-system": {
+      "projectType": "library",
+      "root": "projects/design-system",
+      "sourceRoot": "projects/design-system/src",
+      "prefix": "mrd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/design-system/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/design-system/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/design-system/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/design-system/src/test.ts",
+            "tsConfig": "projects/design-system/tsconfig.spec.json",
+            "karmaConfig": "projects/design-system/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/design-system/**/*.ts",
+              "projects/design-system/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "auth-sso": {
+      "projectType": "library",
+      "root": "projects/auth-sso",
+      "sourceRoot": "projects/auth-sso/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/auth-sso/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/auth-sso/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/auth-sso/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/auth-sso/src/test.ts",
+            "tsConfig": "projects/auth-sso/tsconfig.spec.json",
+            "karmaConfig": "projects/auth-sso/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/auth-sso/**/*.ts",
+              "projects/auth-sso/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "analytics-sdk": {
+      "projectType": "library",
+      "root": "projects/analytics-sdk",
+      "sourceRoot": "projects/analytics-sdk/src",
+      "prefix": "anl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/analytics-sdk/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/analytics-sdk/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/analytics-sdk/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/analytics-sdk/src/test.ts",
+            "tsConfig": "projects/analytics-sdk/tsconfig.spec.json",
+            "karmaConfig": "projects/analytics-sdk/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/analytics-sdk/**/*.ts",
+              "projects/analytics-sdk/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "market-data-client": {
+      "projectType": "library",
+      "root": "projects/market-data-client",
+      "sourceRoot": "projects/market-data-client/src",
+      "prefix": "mkt",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/market-data-client/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/market-data-client/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/market-data-client/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/market-data-client/src/test.ts",
+            "tsConfig": "projects/market-data-client/tsconfig.spec.json",
+            "karmaConfig": "projects/market-data-client/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/market-data-client/**/*.ts",
+              "projects/market-data-client/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

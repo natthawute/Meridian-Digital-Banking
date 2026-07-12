@@ -1,0 +1,33 @@
+<h1>Meridian Digital Banking — Transfers</h1>
+
+<auth-mfa-step></auth-mfa-step>
+
+<form class="transfer-form" (ngSubmit)="submit()">
+  <mrd-form-field label="From account">
+    <select matNativeControl name="fromAccount" [(ngModel)]="fromAccount">
+      <option *ngFor="let account of accounts" [value]="account">
+        {{ account }}
+      </option>
+    </select>
+  </mrd-form-field>
+
+  <mrd-form-field label="To account">
+    <select matNativeControl name="toAccount" [(ngModel)]="toAccount">
+      <option *ngFor="let account of accounts" [value]="account">
+        {{ account }}
+      </option>
+    </select>
+  </mrd-form-field>
+
+  <mrd-form-field label="Amount" hint="USD">
+    <input
+      matInput
+      type="number"
+      name="amount"
+      [(ngModel)]="amount"
+      placeholder="0.00"
+    />
+  </mrd-form-field>
+
+  <mrd-button variant="accent" (pressed)="submit()">Submit transfer</mrd-button>
+</form>
