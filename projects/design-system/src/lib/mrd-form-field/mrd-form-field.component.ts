@@ -5,10 +5,8 @@ import {
   Input,
   ViewChild,
 } from '@angular/core';
-import {
-  MatFormField,
-  MatFormFieldControl,
-} from '@angular/material/form-field';
+import { MatLegacyFormField as MatFormField } from '@angular/material/legacy-form-field';
+import { MatFormFieldControl } from '@angular/material/form-field';
 
 /**
  * Meridian branded form field.
