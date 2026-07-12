@@ -1,0 +1,17 @@
+<h1>Meridian Digital Banking — Accounts</h1>
+
+<div class="account-grid">
+  <mrd-card
+    *ngFor="let account of accounts"
+    [title]="account.name"
+    [subtitle]="account.type"
+    [variant]="account.type === 'Investment' ? 'highlight' : 'default'"
+  >
+    <p class="balance">
+      {{ account.balance ? account.balance.formatted : 'Loading…' }}
+    </p>
+    <mrd-button variant="primary" (pressed)="viewDetails(account)">
+      View details
+    </mrd-button>
+  </mrd-card>
+</div>
